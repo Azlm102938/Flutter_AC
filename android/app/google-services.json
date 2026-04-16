@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "968840001299",
+    "firebase_url": "https://smartremote-1e9be-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "smartremote-1e9be",
+    "storage_bucket": "smartremote-1e9be.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:968840001299:android:446cd364185b9955398ce6",
+        "android_client_info": {
+          "package_name": "com.HS.SmartRemote"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCehP5XxVuF4jOqi5jBLJgMfXOEVqYbEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
