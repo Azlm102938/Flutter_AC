@@ -234,7 +234,7 @@ class _ACControlPageState extends State<ACControlPage> {
                     IconButton(
                       icon: const Icon(Icons.settings, color: Colors.white),
                       onPressed: () async {
-                        await Navigator.push(
+                        final result = await Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (_) => SettingsPage(
@@ -243,6 +243,30 @@ class _ACControlPageState extends State<ACControlPage> {
                             ),
                           ),
                         );
+
+                        /// 🔥 HANDLE RESET
+                        if (result == "RESET") {
+                          Navigator.pushReplacementNamed(context, "/setup");
+                          return;
+                        }
+
+                        /// 🔥 HANDLE CHANGE MAC
+                        if (result != null && result is String) {
+                          setState(() {
+                            mac = result;
+                          });
+
+                          settingsRef = FirebaseDatabase.instance.ref(
+                            "devices/$mac/settings",
+                          );
+
+                          sensorRef = FirebaseDatabase.instance.ref(
+                            "devices/$mac/sensors",
+                          );
+
+                          listenToSettings();
+                          listenToSensors();
+                        }
                       },
                     ),
                   ],

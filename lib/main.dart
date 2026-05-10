@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'theme/app_theme.dart';
-import 'theme/splash_screen.dart';
 import 'pages/ac_control_page.dart';
 import 'pages/setup_device_page.dart';
 import 'services/mac_storage.dart';
@@ -51,10 +50,13 @@ class ACApp extends StatelessWidget {
       home: FutureBuilder<bool>(
         future: _hasMac(),
         builder: (context, snapshot) {
+          /// loading kosong
           if (!snapshot.hasData) {
-            return const SplashScreen();
+            return const Scaffold(
+              backgroundColor: Color(0xFF0F2027),
+              body: Center(child: CircularProgressIndicator()),
+            );
           }
-
           if (snapshot.data!) {
             return const ACControlPage();
           }
