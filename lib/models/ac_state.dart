@@ -12,12 +12,12 @@ class ACState {
 
   // mapping merk → protocol_id
   Map<String, int> protocolMap = {
-    'Daikin': 14,
-    'Panasonic': 3,
-    'Sharp': 27,
-    'LG': 6,
-    'Samsung': 11,
-    'Gree': 32,
+    'Daikin': 16,
+    'Panasonic': 5,
+    'Sharp': 14,
+    'LG': 10,
+    'Samsung': 7,
+    'Gree': 24,
   };
 
   ACState({
@@ -31,7 +31,14 @@ class ACState {
     this.swingOn = false,
   });
 
-  List<String> get acList => ['Daikin', 'Panasonic', 'Samsung', 'LG', 'Gree'];
+  List<String> get acList => [
+    'Daikin',
+    'Panasonic',
+    'Samsung',
+    'LG',
+    'Gree',
+    'Sharp',
+  ];
 
   int get protocolId => protocolMap[selectedAC]!;
 
